@@ -1,0 +1,19 @@
+<section data-ng-controller="AusController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Aus</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="au in aus" data-ng-href="#!/aus/{{au._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="au.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="au.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="au.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!aus.$resolved || aus.length">
+    	No Aus yet, why don't you <a href="/#!/aus/create">create one</a>?
+    </div>
+</section>
