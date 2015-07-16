@@ -3,7 +3,7 @@ node_js:
   - '0.10'
   - '0.11'
 before_script:
-  - npm install -g yo bower grunt-cli gulp
+  - bower cache clean && bower install
   - npm install
 services: mongodb
 
